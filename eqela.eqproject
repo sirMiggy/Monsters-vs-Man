@@ -1,0 +1,9 @@
+
+#
+# Project configuration file for
+# Monsters vs Man
+#
+
+projectname: Monsters vs Man
+vendorid: com.sirMiggy
+mainmodule: com.sirMiggy.monstersvsman
