@@ -40,7 +40,7 @@ public class MonsterEntity : SEEntity
 				MainScene.gameOver = true;
 		}
 		
-		monster.move(mx+((MainScene.x-0.5*PlayerEntity.wp)-mx)/Math.random(50,100),my+((MainScene.y-0.5*PlayerEntity.hp)-my)/Math.random(50,100));
+		monster.move(mx+((MainScene.x-0.25*PlayerEntity.wp)-mx)/Math.random(50,100),my+((MainScene.y-0.25*PlayerEntity.hp)-my)/Math.random(50,100));
 
 	}
 	

@@ -24,11 +24,14 @@ public class GameOverScene : SEScene
 		w = get_scene_width();
 
 		rsc.prepare_image("bgrid","grid",w,h);
-		rsc.prepare_image("pb","retry button",0.25*w,0.25*h);
+		rsc.prepare_image("pb","gameover",0.75*w,0.25*h);
 
 		BGGrid = add_sprite_for_image(SEImage.for_resource("bgrid"));
 		Playbutton = add_sprite_for_image(SEImage.for_resource("pb"));
 
+		AudioClipManager.prepare("death");
+		AudioClipManager.play("death");
+		
 		hpb = Playbutton.get_height();
 		wpb = Playbutton.get_width();
 		
@@ -47,8 +50,8 @@ public class GameOverScene : SEScene
 	public void on_pointer_press(SEPointerInfo pi) {
         base.on_pointer_press(pi);
        
-		 if(pi.is_inside(xpb,ypb,wpb,hpb)) {
-            switch_scene(new MainScene());
+		 if(pi.is_inside(0,0,w,h)) {
+            switch_scene(new MenuScene());
         }
 	}
 }

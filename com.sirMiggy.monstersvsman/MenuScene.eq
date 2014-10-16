@@ -26,6 +26,9 @@ public class MenuScene : SEScene
 		rsc.prepare_image("bgrid","grid",w,h);
 		rsc.prepare_image("pb","PlayButton",0.25*w,0.25*h);
 
+		AudioClipManager.prepare("beginning");
+		AudioClipManager.play("beginning");
+
 		BGGrid = add_sprite_for_image(SEImage.for_resource("bgrid"));
 		Playbutton = add_sprite_for_image(SEImage.for_resource("pb"));
 

@@ -20,13 +20,19 @@ public class MainScene : SEScene
 		h = get_scene_height();
 		w = get_scene_width();
 		add_entity(SESpriteEntity.for_color(Color.instance("white"), get_scene_width(), get_scene_height()));
+
 		rsc.prepare_image("bgrid","grid",w,h);
+	
+		AudioClipManager.prepare("inter");
+			
 		BGGrid = add_sprite_for_image(SEImage.for_resource("bgrid"));
 		BGGrid.move(0,0);
 		add_entity(new PlayerEntity());
 
+		AudioClipManager.play("inter");
+		
 		for(i = 0 ; i < Math.random(3,10); i++){
-		add_entity(new MonsterEntity());
+			add_entity(new MonsterEntity());
 		}
 	}
 
@@ -40,6 +46,7 @@ public class MainScene : SEScene
 	 	y = pi.get_y();
 
 			if(gameOver){	 
+							
 				switch_scene(new GameOverScene()); 	
 			}
 	}
